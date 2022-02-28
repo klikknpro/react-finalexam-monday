@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div>
       <h1>Series API</h1>
-      {isShown && <Subscription/>}
+      {isShown && <Subscription setIsShown={setIsShown}/>}
       {characters ?
        characters.map((character, i) => (
          <Character character={character} key={i}/>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import http from "axios";
 import LoadingMask from './LoadingMask';
 
-const Subscription = () => {
+const Subscription = ({setIsShown}) => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
@@ -15,8 +15,10 @@ const Subscription = () => {
     });
     setIsLoading(false);
     setHasSubscribed(true);
-
-  }
+    setTimeout(() => {
+      setIsShown(false);
+    }, 2 * 1000); // pelda kedveert 2
+  };
 
   return (
     <div>
