@@ -10,8 +10,8 @@ const Character = ({character}) => {
   return (
     <div>
       <h2>{character.name}</h2>
-      <button onClick={toggleDetails}>Show more</button>
       {isShown && <p>{character.details}</p>}
+      <button onClick={toggleDetails}>{isShown ? "Show less" : "Show more"}</button>
     </div>
   )
 }
