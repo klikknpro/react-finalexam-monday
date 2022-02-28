@@ -5,6 +5,7 @@ import LoadingMask from './LoadingMask';
 const Subscription = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [hasSubscribed, setHasSubscribed] = useState(false);
 
   const subscribe = async() => {
     setIsLoading(true);
@@ -13,14 +14,14 @@ const Subscription = () => {
       email: email
     });
     setIsLoading(false);
-
+    setHasSubscribed(true);
 
   }
 
   return (
     <div>
       <h2>Subscribe to our newsletter!!!!!!</h2>
-      {isLoading ? <LoadingMask/> :
+      {isLoading ? <LoadingMask/> : hasSubscribed ? "Subscribed" :
         <div>
           <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <button onClick={subscribe} disabled={!(email.includes("@") && email.includes("."))}>Subscribe</button>
