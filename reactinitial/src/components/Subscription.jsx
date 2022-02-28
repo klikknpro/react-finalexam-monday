@@ -10,7 +10,7 @@ const Subscription = () => {
   return (
     <div>
       <h2>Subscribe to our newsletter!!!!!!</h2>
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <button onClick={subscribe}>Subscribe</button>
     </div>
   )
