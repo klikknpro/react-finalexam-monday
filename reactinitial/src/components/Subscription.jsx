@@ -11,7 +11,7 @@ const Subscription = () => {
     <div>
       <h2>Subscribe to our newsletter!!!!!!</h2>
       <input type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <button onClick={subscribe}>Subscribe</button>
+      <button onClick={subscribe} disabled={!(email.includes("@") && email.includes("."))}>Subscribe</button>
     </div>
   )
 }
