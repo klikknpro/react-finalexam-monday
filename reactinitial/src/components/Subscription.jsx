@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
+import http from "axios";
 
 const Subscription = () => {
   const [email, setEmail] = useState("");
 
-  const subscribe = () => {
+  const subscribe = async() => {
+    // {email} body is jo
+    const response = await http.post("https://seriescharacters.com/api/newsletter", {
+      email: email
+    });
 
   }
 
