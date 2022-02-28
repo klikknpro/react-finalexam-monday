@@ -4,9 +4,13 @@ const App = () => {
 
   return (
     <div>
-      Todo...
+      <h1>Series API</h1>
     </div>
   )
 }
 
 export default App
+
+/*
+git commit mar a legelejen!
+*/
