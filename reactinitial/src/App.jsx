@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import http from "axios";
+import LoadingMask from "./components/LoadingMask";
 
 const App = () => {
+  const [characters, setCharacters] = useState(null);
+
   const load = async() => {
     const response = await http.get("https://seriescharacters.com/api/howimetyourmother");
-    console.log(response.data);
+    setCharacters(response.data);
   }
 
   useEffect(() => {
@@ -14,6 +17,7 @@ const App = () => {
   return (
     <div>
       <h1>Series API</h1>
+      {characters ? "characters loaded" : <LoadingMask/>}
     </div>
   )
 }
